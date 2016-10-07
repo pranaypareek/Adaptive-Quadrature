@@ -1,0 +1,33 @@
+V "GNAT Lib v2016"
+P ZX
+
+RN
+RV NO_FLOATING_POINT
+RV SPARK_05
+
+U adaptivequad%b	adaptivequad.adb	3dda39ef NE OO PK GE
+
+U adaptivequad%s	adaptivequad.ads	99d433e0 BN EE NE OO PK GE
+
+D adaptivequad.ads	20161001193551 99d433e0 adaptivequad%s
+D adaptivequad.adb	20161001193602 a40e0a0f adaptivequad%b
+D system.ads		20160516092931 c3282aa7 system%s
+X 1 adaptivequad.ads
+2+8 T 3r22 3r28 3r36 3r46 6r21 6r27 6r35 6r45 2|15r21 15r27 15r35 15r45
+3V17 F{2+8} 3>19 3>25 3>31 2|17s12
+3*19 A{2+8}
+3*25 B{2+8}
+3*31 Eps{2+8}
+5k9*AdaptiveQuad 2z8 3z17 7l5 7e17 2|1b14 20l5 20t17
+6V12*AQuad{2+8} 6>18 6>24 6>30 2|15b12 18l7 18t12
+6*18 A{2+8} 2|15b18 17r14
+6*24 B{2+8} 2|15b24 17r17
+6*30 Eps{2+8} 2|15b30 17r20
+X 2 adaptivequad.adb
+3V12 SimpsonsRule{float} 3b12 3>25 3>35 12l7 12t19
+3f25 A{float} 8r11 9r19 10r12
+3f35 B{float} 8r15 9r15 10r28
+4f3 C{float} 8m5 10r23
+5f3 H3{float} 9m5
+6f3 Val{float} 10m5 11r12
+
