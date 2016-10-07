@@ -1,5 +1,10 @@
 package body AdaptiveQuad is
 
+  --function Apply(Y: T) return T is
+  --begin
+    --return MyF(Y);
+  --end Apply;
+
   function SimpsonsRule(A: Float; B: Float) return Float is
   C: Float := 0.0;
   H3: Float := 0.0;
@@ -12,9 +17,17 @@ package body AdaptiveQuad is
   end SimpsonsRule;
 
   --function RecAQuad()
-  function AQuad(A: T; B: T; Eps: T) return T is
+  --function AQuad(A: T; B: T; Eps: T) return T is
+  --begin
+    --return F(A, B, Eps);
+  --end AQuad;
+
+  function AQuad(A, B, Eps: Float) return Float is
+  SinVal: float;
   begin
-    return F(A, B, Eps);
+    SinVal := MyF(0.45);
+    --Put_Line("SinVal = " & float'image(SinVal));
+    return(A * B * SinVal);
   end AQuad;
 
 end AdaptiveQuad;

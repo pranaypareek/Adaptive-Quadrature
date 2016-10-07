@@ -3,7 +3,9 @@ use text_io;
 
 with Ada.Numerics.Generic_Elementary_Functions;
 
-procedure AQstub2 is
+with AdaptiveQuad;
+
+procedure AQMain is
   package FloatFunctions is new Ada.Numerics.Generic_Elementary_Functions(Float);
   use FloatFunctions;
 
@@ -12,6 +14,7 @@ procedure AQstub2 is
 
   package flt_io is new float_io(float);
   use flt_io;
+
 
   Epsilon: float := 0.000001;
   Val: float;
@@ -25,6 +28,10 @@ procedure AQstub2 is
     return Sin(y);
   end MyF;
 
+  package AQ is new AdaptiveQuad(Float, MyF);
+  use AQ;
+
+  --------------------------------
 
   task ReadPairs;
 
@@ -69,9 +76,7 @@ procedure AQstub2 is
       select
         
         accept Go(a, b: float) do
-           Put_Line("Value a = " & float'image(a));
-           Put_Line("Value b = " & float'image(b));
-           res := a * b;
+           res := AQ.AQuad(a, b, Epsilon);
            PrintResult.Go(a, b, res);
         end Go;
 
@@ -115,4 +120,5 @@ procedure AQstub2 is
 begin
   Val := MyF(0.45);
   Put_Line("Value = " & float'image(Val));
-end AQstub2;
+  --Put_Line("SinVal = " & float'image(AQ.Apply(0.45)));
+end AQMain;

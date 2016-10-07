@@ -1,7 +1,8 @@
 generic
   type T is limited private;
-  with function F(A: T; B: T; Eps: T) return T;
+  with function MyF(X: float) return float;
 
 package AdaptiveQuad is
-  function AQuad(A: T; B: T; Eps: T) return T;
+  --function Apply(Y: T) return T;
+  function AQuad(A, B, Eps: Float) return Float;
 end AdaptiveQuad;
