@@ -15,6 +15,9 @@ procedure AQstub2 is
 
   Epsilon: float := 0.000001;
   Val: float;
+
+  --------------------------------
+
   function MyF(x: float) return float is
   y: float;
   begin
@@ -24,31 +27,35 @@ procedure AQstub2 is
 
 
   task ReadPairs;
+
   task ComputeArea is
     entry Go(a, b: float);
     entry Done;
   end ComputeArea;
 
+  task PrintResult is
+    entry Go(a, b, ans: float);
+    entry Done;
+  end PrintResult;
+
   --------------------------------
 
   task body ReadPairs is
-  a: float;
-  b: float;
-  Z: Integer := 0;
+    a: float;
+    b: float;
+    Z: Integer := 0;
   begin
     for i in 1..5 loop
-      --put("ReadPairs get a: ");New_line;
       get(a);
-      --put("ReadPairs get b: ");New_line;
       get(b);
 
-      for Y in 1..1000 loop   -- just code to take some time.
-         Z := Z + Y;          -- it can execute while Consumer
-      end loop;               -- is consuming the previous produced value.
+      for Y in 1..1000 loop
+         Z := Z + Y;
+      end loop;
 
       ComputeArea.Go(a, b);
     end loop;
-    ComputeArea.Done;  -- entry call signalling producing is done.
+    ComputeArea.Done;
   end ReadPairs;
 
   --------------------------------
@@ -56,26 +63,54 @@ procedure AQstub2 is
   task body ComputeArea is
     Finished: Boolean := False;
     Z: Integer := 0;
+    res: Float;
   begin  
     while not Finished loop
-      select    -- allows waiting for one of multiple entry calls
+      select
         
-        accept Go(a, b: float) do  -- if this entry call comes in, 
-           Put_Line("Value a = " & float'image(a));New_line;         -- then continue computing
+        accept Go(a, b: float) do
+           Put_Line("Value a = " & float'image(a));New_line;
            Put_Line("Value b = " & float'image(b));
+           res := a * b;
+           PrintResult.Go(a, b, res);
         end Go;
 
-        for Y in 1..1000 loop   -- more code to take some time
-           Z := Z + Y;          -- it can execute while Producer
-        end loop;               -- is executing.
+        for Y in 1..1000 loop
+           Z := Z + Y;
+        end loop;
       or 
-        accept Done;      -- if this entry call comes in, we're done.
-        Finished := True; 
-          end select;
+        accept Done;
+        Finished := True;
+        PrintResult.Done;
+      end select;
     end loop;
   end ComputeArea;
 
   --------------------------------
+
+  task body PrintResult is
+    Finished: Boolean := False;
+    Z: Integer := 0;
+  begin
+    while not Finished loop
+      select
+        
+        accept Go(a, b, ans: float) do
+           Put_Line("The area under sin(x^2) for x = " & float'image(a) & 
+            " to "  & float'image(b) & " is "  & float'image(ans));
+        end Go;
+
+        for Y in 1..1000 loop
+           Z := Z + Y;
+        end loop;
+      or 
+        accept Done;
+        Finished := True; 
+          end select;
+    end loop;
+  end PrintResult;
+
+  --------------------------------  
 
 begin
   Val := MyF(0.45);
