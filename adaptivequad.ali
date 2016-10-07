@@ -2,30 +2,97 @@ V "GNAT Lib v2016"
 P ZX
 
 RN
+RV NO_EXCEPTION_HANDLERS
+RV NO_EXCEPTIONS
 RV NO_FLOATING_POINT
+RV NO_IO
+RV NO_RECURSION
+RV NO_TASKING
+RV NO_DYNAMIC_SIZED_OBJECTS
 RV SPARK_05
 
-U adaptivequad%b	adaptivequad.adb	e691ae7e NE OO PK GE
+U adaptivequad%b	adaptivequad.adb	ce051101 NE OO PK GE IL
+W ada%s			ada.ads			ada.ali
+W ada.numerics%s	a-numeri.ads		a-numeri.ali
+Z ada.numerics.aux%s	a-numaux.adb		a-numaux.ali
+W ada.numerics.generic_elementary_functions%s
+Z ada.text_io%s		a-textio.adb		a-textio.ali
+Z ada.text_io.float_aux%s  a-tiflau.adb		a-tiflau.ali
+W ada.text_io.float_io%s
+W text_io%s		text_io.ads		text_io.ali
 
 U adaptivequad%s	adaptivequad.ads	7dc17009 BN EE NE OO PK GE
 
-D adaptivequad.ads	20161007173936 7dc17009 adaptivequad%s
-D adaptivequad.adb	20161007173702 9b50de77 adaptivequad%b
+D ada.ads		20160516092928 3ffc8e18 ada%s
+D a-except.ads		20160516092928 291912d5 ada.exceptions%s
+D a-ioexce.ads		20160516092927 e4a01f64 ada.io_exceptions%s
+D a-numeri.ads		20160516092928 bb51c45a ada.numerics%s
+D a-numaux.ads		20160516092931 243fe0b7 ada.numerics.aux%s
+D a-ngelfu.ads		20160516092931 b8fdcb46 ada.numerics.generic_elementary_functions%s
+D a-ngelfu.adb		20160516092929 5e96a931 ada.numerics.generic_elementary_functions%b
+D a-stream.ads		20160516092929 119b8fb3 ada.streams%s
+D a-tags.ads		20160516092932 01f5e3ef ada.tags%s
+D a-textio.ads		20160516092932 386df5d4 ada.text_io%s
+D a-tiflau.ads		20160516092929 c0393f21 ada.text_io.float_aux%s
+D a-tiflio.ads		20160516092927 56fbda09 ada.text_io.float_io%s
+D a-tiflio.adb		20160516092929 fd9b1cfc ada.text_io.float_io%b
+D a-unccon.ads		20160516092931 f9eb8f06 ada.unchecked_conversion%s
+D adaptivequad.ads	20161007175500 7dc17009 adaptivequad%s
+D adaptivequad.adb	20161007211333 4eef8c87 adaptivequad%b
+D interfac.ads		20160516092928 5ab55268 interfaces%s
+D i-cstrea.ads		20160516092927 e53d8b8e interfaces.c_streams%s
 D system.ads		20160516092931 c3282aa7 system%s
-X 1 adaptivequad.ads
+D s-crtl.ads		20160516092927 0ebbdb71 system.crtl%s
+D s-exctab.ads		20160516092931 54135002 system.exception_table%s
+D s-ficobl.ads		20160516092933 078245e4 system.file_control_block%s
+D s-parame.ads		20160516092932 7e2a0d7f system.parameters%s
+D s-soflin.ads		20160516092929 14e1eb6c system.soft_links%s
+D s-stache.ads		20160516092932 a37c21ec system.stack_checking%s
+D s-stalib.ads		20160516092931 09bd3940 system.standard_library%s
+D s-stoele.ads		20160516092932 2dc34a04 system.storage_elements%s
+D s-traent.ads		20160516092928 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20160516092930 34867c83 system.unsigned_types%s
+D s-wchcon.ads		20160516092931 1b7d22d2 system.wch_con%s
+D text_io.ads		20160516092930 45d626c9 text_io%s
+X 1 ada.ads
+16K9*Ada 19e8 16|4r6 11r33
+X 4 a-numeri.ads
+16K13*Numerics 32e17 16|4r10 11r37
+X 6 a-ngelfu.ads
+39k22*Generic_Elementary_Functions 170e46 16|4w19 11r46
+X 12 a-tiflio.ads
+46k21*Float_IO 89e25 16|8r25
+X 15 adaptivequad.ads
 2+8 T
-3V17 MyF{float} 3>21 2|14s16 14s31 14s40 26s15
+3V17 MyF{float} 3>21 16|20s16 20s31 20s40
 3f21 X{float}
-5k9*AdaptiveQuad 2z8 3z17 9l5 9e17 2|1b14 31l5 31t17
-7V12*AQuad{float} 7>18 7>21 7>24 2|23b12 29l7 29t12
-7f18 A{float} 2|23b18 28r12
-7f21 B{float} 2|23b21 28r16
-7f24 Eps{float} 2|23b24
-8V12*SimpsonsRule{float} 8>25 8>28 2|8b12 15l7 15t19
-8f25 A{float} 2|8b25 12r11 13r19 14r20
-8f28 B{float} 2|8b35 12r15 13r15 14r44
-X 2 adaptivequad.adb
-9f3 C{float} 12m5 14r35
-10f3 H3{float} 13m5 14r12
-24f3 SinVal{float} 26m5 28r20
+5k9*AdaptiveQuad 2z8 3z17 9l5 9e17 16|6b14 73l5 73t17
+7V12*AQuad{float} 7>18 7>21 7>24 16|23b12 38s18 46s18 65s14 65s37 71l7 71t12
+7f18 A{float} 16|23b18 57r11 59r26 61r27 65r20
+7f21 B{float} 16|23b21 57r15 60r30 61r30 65r46
+7f24 Eps{float} 16|23b24 63r44 65r26 65r49
+8V12*SimpsonsRule{float} 8>25 8>28 16|14b12 21l7 21t19 59s13 60s14 61s14
+8f25 A{float} 16|14b25 18r11 19r19 20r20
+8f28 B{float} 16|14b35 18r15 19r15 20r44
+X 16 adaptivequad.adb
+8K11 flt_io[12|46] 9r7
+11K11 FloatFunctions[6|39] 12r7
+15f5 C{float} 18m5 20r35
+16f5 H3{float} 19m5 20r12
+24f5 C{float} 57m5 59r29 60r27 65r23 65r43
+25f5 Left{float} 59m5 63r12 67r14 67r30
+26f5 Right{float} 60m5 63r19 67r21 67r37
+27f5 Whole{float} 61m5 63r27 67r45
+28f5 Val{float} 65m7 67m7 70r12
+30f5 Res_A{float} 38m9
+31f5 Res_B{float} 46m9
+32U15 RecursiveAsr 32b15 32>28 32>31 32>34 32>37 54l9 54t21
+32f28 A{float} 38r24
+32f31 C{float} 38r27 46r24
+32f34 B{float} 46r27
+32f37 Eps{float} 38r30 46r30
+33t12 TLeft 36b17 42l11 42t16
+34t12 TRight 44b17 50l11 50t17
+X 31 text_io.ads
+24K9*Text_IO=24:29 16|1w6 2r5
 

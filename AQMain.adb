@@ -17,7 +17,6 @@ procedure AQMain is
 
 
   Epsilon: Float := 0.000001;
-  Val: Float;
 
   --------------------------------
 
@@ -56,6 +55,9 @@ procedure AQMain is
       get(a);
       get(b);
 
+      --Put_Line("A = " & Float'image(a));New_line;
+      --Put_Line("B = " & Float'image(b));New_line;
+
       for Y in 1..1000 loop
          Z := Z + Y;
       end loop;
@@ -76,8 +78,7 @@ procedure AQMain is
       select
         
         accept Go(a, b: Float) do
-           --res := AQ.AQuad(a, b, Epsilon);
-           res := AQ.SimpsonsRule(a, b);
+           res := AQ.AQuad(a, b, Epsilon);
            PrintResult.Go(a, b, res);
         end Go;
 
@@ -119,7 +120,9 @@ procedure AQMain is
   --------------------------------  
 
 begin
-  Val := MyF(0.45);
-  Put_Line("Value = " & Float'image(Val));
+  
+  null;
+  --Val := MyF(0.45);
+  --Put_Line("Value = " & Float'image(Val));
   --Put_Line("SinVal = " & Float'image(AQ.Apply(0.45)));
 end AQMain;
