@@ -19,7 +19,7 @@ RV MAX_SELECT_ALTERNATIVES=2
 RV MAX_TASK_ENTRIES=2
 RV MAX_TASKS=1+
 
-U aqmain%b		aqmain.adb		e1991bb6 NE OO SU IL
+U aqmain%b		aqmain.adb		9eb15b9d NE OO SU IL
 W ada%s			ada.ads			ada.ali
 W ada.exceptions%s	a-except.adb		a-except.ali
 W ada.numerics%s	a-numeri.ads		a-numeri.ali
@@ -65,9 +65,9 @@ D a-tiinau.ads		20160516092930 8114c8e4 ada.text_io.integer_aux%s
 D a-tiinio.ads		20160516092928 aa04e5d6 ada.text_io.integer_io%s
 D a-tiinio.adb		20160516092930 df9cd7af ada.text_io.integer_io%b
 D a-unccon.ads		20160516092931 f9eb8f06 ada.unchecked_conversion%s
-D adaptivequad.ads	20161007175500 7dc17009 adaptivequad%s
-D adaptivequad.adb	20161007211333 4eef8c87 adaptivequad%b
-D aqmain.adb		20161007211317 61738630 aqmain%b
+D adaptivequad.ads	20161007212349 02e93022 adaptivequad%s
+D adaptivequad.adb	20161007212321 2e3eccc7 adaptivequad%b
+D aqmain.adb		20161007212404 61738630 aqmain%b
 D interfac.ads		20160516092928 5ab55268 interfaces%s
 D i-c.ads		20160516092927 5421119b interfaces.c%s
 D i-cstrea.ads		20160516092927 e53d8b8e interfaces.c_streams%s
@@ -111,54 +111,54 @@ X 7 a-ngelfu.ads
 39k22*Generic_Elementary_Functions 170e46 22|4w19 9r46
 80V13 Sin{float} 22|27s12[9]
 X 12 a-textio.ads
-263U14*Put_Line 22|106s12
+263U14*Put_Line 22|103s12
 X 14 a-tiflio.ads
 46k21*Float_IO 89e25 22|15r25
 57U14 Get 22|55s7[15] 56s7[15]
 X 17 a-tiinio.ads
 46k21*Integer_IO 85e27 22|12r25
 X 20 adaptivequad.ads
-5k9*AdaptiveQuad 9e17 22|6w6 30r21
-7V12 AQuad{float} 22|81s22[30]
+5k9*AdaptiveQuad 7e17 22|6w6 30r21
+6V12 AQuad{float} 22|78s22[30]
 X 22 aqmain.adb
-8U11*AQMain 8b11 128l5 128t11
+8U11*AQMain 8b11 121l5 121t11
 9K11 FloatFunctions[7|39] 10r7
 12K11 int_io[17|46] 13r7
 15K11 flt_io[14|46] 16r7
-19f3 Epsilon{float} 81r34
+19f3 Epsilon{float} 78r34
 23V12 MyF{float} 23b12 23>16 28l7 28t10 30r41
 23f16 x{float} 26r10 26r14
 24f3 y{float} 26m5 27r16
-30K11 AQ[20|5] 31r7 81r19
-35t8 ReadPairs 49b13 68l7 68t16
-37t8 ComputeArea 65r7 67r5 72b13 94l7 94t18
-38Y11 Go 38>14 38>17 65s19 80b16 83l13 83t15
-38f14 a{float} 81r28 82r27
-38f17 b{float} 81r31 82r30
-39Y11 Done 67s17 89b16
-42t8 PrintResult 82r12 91r9 98b13 118l7 118t18
-43Y11 Go 43>14 43>17 43>20 82s24 105b16 108l13 108t15
-43f14 a{float} 106r70
-43f17 b{float} 107r35
-43f20 ans{float} 107r62
-44Y11 Done 91s21 114b16
-50f5 a{float} 55m11 65r22
-51f5 b{float} 56m11 65r25
-52i5 Z{integer} 62m10 62r15
+30K11 AQ[20|5] 31r7 78r19
+35t8 ReadPairs 49b13 65l7 65t16
+37t8 ComputeArea 62r7 64r5 69b13 91l7 91t18
+38Y11 Go 38>14 38>17 62s19 77b16 80l13 80t15
+38f14 a{float} 78r28 79r27
+38f17 b{float} 78r31 79r30
+39Y11 Done 64s17 86b16
+42t8 PrintResult 79r12 88r9 95b13 115l7 115t18
+43Y11 Go 43>14 43>17 43>20 79s24 102b16 105l13 105t15
+43f14 a{float} 103r70
+43f17 b{float} 104r35
+43f20 ans{float} 104r62
+44Y11 Done 88s21 111b16
+50f5 a{float} 55m11 62r22
+51f5 b{float} 56m11 62r25
+52i5 Z{integer} 59m10 59r15
 54i9 i{integer}
-61i11 Y{integer} 62r19
-73b5 Finished{boolean} 77r15 90m9
-74i5 Z{integer} 86m12 86r17
-75f5 res{float} 81m12 82r33
-80f19 a{float}
-80f22 b{float}
-85i13 Y{integer} 86r21
-99b5 Finished{boolean} 102r15 115m9
-100i5 Z{integer} 111m12 111r17
-105f19 a{float}
-105f22 b{float}
-105f25 ans{float}
-110i13 Y{integer} 111r21
+58i11 Y{integer} 59r19
+70b5 Finished{boolean} 74r15 87m9
+71i5 Z{integer} 83m12 83r17
+72f5 res{float} 78m12 79r33
+77f19 a{float}
+77f22 b{float}
+82i13 Y{integer} 83r21
+96b5 Finished{boolean} 99r15 112m9
+97i5 Z{integer} 108m12 108r17
+102f19 a{float}
+102f22 b{float}
+102f25 ans{float}
+107i13 Y{integer} 108r21
 X 43 s-stausa.ads
 203U14*Initialize 204i<c,__gnat_stack_usage_initialize>22
 268U14*Output_Results 272i<c,__gnat_stack_usage_output_results>22

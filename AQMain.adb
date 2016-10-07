@@ -55,9 +55,6 @@ procedure AQMain is
       get(a);
       get(b);
 
-      --Put_Line("A = " & Float'image(a));New_line;
-      --Put_Line("B = " & Float'image(b));New_line;
-
       for Y in 1..1000 loop
          Z := Z + Y;
       end loop;
@@ -120,9 +117,5 @@ procedure AQMain is
   --------------------------------  
 
 begin
-  
   null;
-  --Val := MyF(0.45);
-  --Put_Line("Value = " & Float'image(Val));
-  --Put_Line("SinVal = " & Float'image(AQ.Apply(0.45)));
 end AQMain;
