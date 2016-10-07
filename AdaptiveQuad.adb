@@ -6,14 +6,12 @@ package body AdaptiveQuad is
   --end Apply;
 
   function SimpsonsRule(A: Float; B: Float) return Float is
-  C: Float := 0.0;
-  H3: Float := 0.0;
-  Val: Float;
+  C: Float;
+  H3: Float;
   begin
     C := (A + B) / 2.0;
     H3 := abs(B - A) / 6.0;
-    Val := A + (4.0 * C) + B;
-    return Val;
+    return H3*(MyF(A) + 4.0 * MyF(C) + MyF(B));
   end SimpsonsRule;
 
   --function RecAQuad()

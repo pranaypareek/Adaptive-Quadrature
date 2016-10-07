@@ -12,17 +12,17 @@ procedure AQMain is
   package int_io is new integer_io(integer);
   use int_io;
 
-  package flt_io is new float_io(float);
+  package flt_io is new float_io(Float);
   use flt_io;
 
 
-  Epsilon: float := 0.000001;
-  Val: float;
+  Epsilon: Float := 0.000001;
+  Val: Float;
 
   --------------------------------
 
-  function MyF(x: float) return float is
-  y: float;
+  function MyF(x: Float) return Float is
+  y: Float;
   begin
     y := x * x;
     return Sin(y);
@@ -36,20 +36,20 @@ procedure AQMain is
   task ReadPairs;
 
   task ComputeArea is
-    entry Go(a, b: float);
+    entry Go(a, b: Float);
     entry Done;
   end ComputeArea;
 
   task PrintResult is
-    entry Go(a, b, ans: float);
+    entry Go(a, b, ans: Float);
     entry Done;
   end PrintResult;
 
   --------------------------------
 
   task body ReadPairs is
-    a: float;
-    b: float;
+    a: Float;
+    b: Float;
     Z: Integer := 0;
   begin
     for i in 1..5 loop
@@ -75,8 +75,9 @@ procedure AQMain is
     while not Finished loop
       select
         
-        accept Go(a, b: float) do
-           res := AQ.AQuad(a, b, Epsilon);
+        accept Go(a, b: Float) do
+           --res := AQ.AQuad(a, b, Epsilon);
+           res := AQ.SimpsonsRule(a, b);
            PrintResult.Go(a, b, res);
         end Go;
 
@@ -100,9 +101,9 @@ procedure AQMain is
     while not Finished loop
       select
         
-        accept Go(a, b, ans: float) do
-           Put_Line("The area under sin(x^2) for x = " & float'image(a) & 
-            " to "  & float'image(b) & " is "  & float'image(ans));
+        accept Go(a, b, ans: Float) do
+           Put_Line("The area under sin(x^2) for x = " & Float'image(a) & 
+            " to "  & Float'image(b) & " is "  & Float'image(ans));
         end Go;
 
         for Y in 1..1000 loop
@@ -119,6 +120,6 @@ procedure AQMain is
 
 begin
   Val := MyF(0.45);
-  Put_Line("Value = " & float'image(Val));
-  --Put_Line("SinVal = " & float'image(AQ.Apply(0.45)));
+  Put_Line("Value = " & Float'image(Val));
+  --Put_Line("SinVal = " & Float'image(AQ.Apply(0.45)));
 end AQMain;

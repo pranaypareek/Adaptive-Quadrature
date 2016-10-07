@@ -5,28 +5,27 @@ RN
 RV NO_FLOATING_POINT
 RV SPARK_05
 
-U adaptivequad%b	adaptivequad.adb	4ffb0258 NE OO PK GE
+U adaptivequad%b	adaptivequad.adb	e691ae7e NE OO PK GE
 
-U adaptivequad%s	adaptivequad.ads	02e93022 BN EE NE OO PK GE
+U adaptivequad%s	adaptivequad.ads	7dc17009 BN EE NE OO PK GE
 
-D adaptivequad.ads	20161007164307 02e93022 adaptivequad%s
-D adaptivequad.adb	20161007164323 4d12327a adaptivequad%b
+D adaptivequad.ads	20161007173936 7dc17009 adaptivequad%s
+D adaptivequad.adb	20161007173702 9b50de77 adaptivequad%b
 D system.ads		20160516092931 c3282aa7 system%s
 X 1 adaptivequad.ads
 2+8 T
-3V17 MyF{float} 3>21 2|28s15
+3V17 MyF{float} 3>21 2|14s16 14s31 14s40 26s15
 3f21 X{float}
-5k9*AdaptiveQuad 2z8 3z17 8l5 8e17 2|1b14 33l5 33t17
-7V12*AQuad{float} 7>18 7>21 7>24 2|25b12 31l7 31t12
-7f18 A{float} 2|25b18 30r12
-7f21 B{float} 2|25b21 30r16
-7f24 Eps{float} 2|25b24
+5k9*AdaptiveQuad 2z8 3z17 9l5 9e17 2|1b14 31l5 31t17
+7V12*AQuad{float} 7>18 7>21 7>24 2|23b12 29l7 29t12
+7f18 A{float} 2|23b18 28r12
+7f21 B{float} 2|23b21 28r16
+7f24 Eps{float} 2|23b24
+8V12*SimpsonsRule{float} 8>25 8>28 2|8b12 15l7 15t19
+8f25 A{float} 2|8b25 12r11 13r19 14r20
+8f28 B{float} 2|8b35 12r15 13r15 14r44
 X 2 adaptivequad.adb
-8V12 SimpsonsRule{float} 8b12 8>25 8>35 17l7 17t19
-8f25 A{float} 13r11 14r19 15r12
-8f35 B{float} 13r15 14r15 15r28
-9f3 C{float} 13m5 15r23
-10f3 H3{float} 14m5
-11f3 Val{float} 15m5 16r12
-26f3 SinVal{float} 28m5 30r20
+9f3 C{float} 12m5 14r35
+10f3 H3{float} 13m5 14r12
+24f3 SinVal{float} 26m5 28r20
 
